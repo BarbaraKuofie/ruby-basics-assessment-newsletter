@@ -32,19 +32,21 @@ def calculate_recipients
   # write a method that will return an array of only the subscribers who haven't unsubscribed
  SUBSCRIBERS - UNSUBSCRIBED
 end
-
+## number of articles was passing a string instead of an 
+#integer on line 98. changing the string into and integer took care of the error 
 def first_n_articles(number_of_articles)
   ARTICLES.first(number_of_articles)
 end
 
+## puts print the ouput on each line. join by "," puts the elements together
 def print_recipients
-  
   # Write a method that uses the output of calculate_recipients
   # and returns a list of emails separated by commas
   # Ex) "abc@email.com, def@email.com, ghi@email.com"
  puts calculate_recipients.join(", ")   
 end
 
+## this is a helper method for print many article. using line breaks (\n\n) to match sample 
 def print_one_article(article)
   # Write a method that will take an article hash
   # and print the title, author and text as a formatted string
@@ -54,6 +56,8 @@ def print_one_article(article)
    puts "#{article[:text]}\n\n"
 end
 
+## this calls on the helper method "pring_one_article". 
+##iterate over the array of article hashes to isolate each hash. then use helper method for each article 
 def print_many_articles(articles)
   # Write a method that will take in an array of article hashes
   # and format each one using the print_one_article method
@@ -61,7 +65,7 @@ def print_many_articles(articles)
     print_one_article(element)
   end 
 end
-
+# the key needed a symbol 
 def format_campus_location(campus)
   "Flatiron #{campus[:name]}"
 end
@@ -91,7 +95,7 @@ def print_newsletter(number)
 
   
 end
-
+## 3 was a string instead of an integer 
 def run
   # We want our program to print three articles by default,
   # but we can change that number here
